@@ -1,0 +1,22 @@
+{
+  "name": "clasp-enhanced-mcp",
+  "version": "1.0.0",
+  "description": "Enhanced MCP server for Google Apps Script clasp with full functionality",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mcp",
+    "clasp",
+    "google-apps-script",
+    "gas"
+  ],
+  "author": "Seth Redmore",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "child_process": "^1.0.2"
+  }
+}
