@@ -22,8 +22,6 @@ class ClaspEnhancedServer {
         },
       }
     );
-
-    this.setupToolHandlers();
   }
 
   async execClaspCommand(command, options = {}) {
@@ -686,6 +684,10 @@ class ClaspEnhancedServer {
   async run() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
+    
+    // Setup handlers after connection is established
+    this.setupToolHandlers();
+    
     console.error('Clasp Enhanced MCP server running on stdio');
   }
 }
