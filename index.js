@@ -5,6 +5,7 @@ import { promisify } from 'util';
 import { readFile, writeFile, access, mkdir } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 
 const execAsync = promisify(exec);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -42,7 +43,7 @@ class ClaspEnhancedServer {
   }
 
   setupToolHandlers() {
-    this.server.setRequestHandler('tools/list', async () => ({
+    this.server.setRequestHandler(ListToolsRequestSchema, async () => ({
       tools: [
         {
           name: 'clasp_login',
@@ -433,7 +434,7 @@ class ClaspEnhancedServer {
       ],
     }));
 
-    this.server.setRequestHandler('tools/call', async (request) => {
+    this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name, arguments: args } = request.params;
 
       try {
