@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "redmorestudio"
+    labels:
+      - "dependencies"
+    open-pull-requests-limit: 10
