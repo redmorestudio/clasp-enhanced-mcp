@@ -16,7 +16,7 @@
   "author": "Seth Redmore",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@modelcontextprotocol/sdk": "^1.16.0",
     "child_process": "^1.0.2"
   }
 }
